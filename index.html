@@ -40,19 +40,6 @@ width:160px;
 margin-bottom:20px;
 }
 
-#inicio button{
-background:#1db954;
-color:white;
-border:none;
-padding:12px 25px;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
-}
-
-/* HEADER */
-
 header{
 text-align:center;
 padding:30px 20px;
@@ -95,8 +82,6 @@ height:160px;
 object-fit:cover;
 }
 
-/* INFO */
-
 .info{
 padding:15px;
 }
@@ -106,8 +91,6 @@ font-weight:bold;
 margin-bottom:10px;
 font-size:15px;
 }
-
-/* BOTON */
 
 button{
 background:#1db954;
@@ -141,8 +124,6 @@ width:95%;
 max-width:650px;
 }
 
-/* RESPONSIVE */
-
 @media (max-width:600px){
 
 .logo{
@@ -170,8 +151,6 @@ grid-template-columns:1fr;
 <h1>Radio L'ecole</h1>
 
 <p>Podcast oficial del colegio</p>
-
-<button onclick="entrarApp()">Entrar a la radio</button>
 
 </div>
 
@@ -292,16 +271,20 @@ behavior:"smooth"
 
 }
 
-function entrarApp(){
+/* PANTALLA INICIAL AUTOMÁTICA */
+
+setTimeout(function(){
+
 document.getElementById("inicio").style.display="none";
-}
+
+},2000);
 
 </script>
 
 </body>
 </html>
-</script>
 
 </body>
 
 </html>
+
