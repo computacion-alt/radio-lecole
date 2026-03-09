@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Radio L'École</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0f2f57;
+color:white;
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+padding:30px 20px;
+}
+
+.logo{
+width:120px;
+}
+
+h1{
+margin:10px 0 5px 0;
+}
+
+/* GRID EPISODIOS */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+padding-bottom:150px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+/* TARJETAS */
+
+.card{
+background:white;
+color:#333;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+/* INFO */
+
+.info{
+padding:15px;
+}
+
+.titulo{
+font-weight:bold;
+margin-bottom:10px;
+font-size:15px;
+}
+
+/* BOTON */
+
+button{
+background:#1db954;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#17a64a;
+}
+
+/* REPRODUCTOR */
+
+.player{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#081f3c;
+padding:12px;
+text-align:center;
+box-shadow:0 -3px 15px rgba(0,0,0,0.4);
+}
+
+audio{
+width:95%;
+max-width:650px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:600px){
+
+.logo{
+width:90px;
+}
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" class="logo">
+
+<h1>Radio L'École</h1>
+
+<p>Podcast del colegio</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+<img src="portada1.jpg">
+<div class="info">
+<div class="titulo">1. Trick or Treat</div>
+<button onclick="playEpisode('trick_or_treat.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada2.jpg">
+<div class="info">
+<div class="titulo">2. Día de Muertos</div>
+<button onclick="playEpisode('dia_de_muertos.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada3.jpg">
+<div class="info">
+<div class="titulo">3. Voces de los Semifinalistas</div>
+<button onclick="playEpisode('voces_semifinalistas.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada4.jpg">
+<div class="info">
+<div class="titulo">4. Detrás del Torneo</div>
+<button onclick="playEpisode('detras_del_torneo.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada5.jpg">
+<div class="info">
+<div class="titulo">5. Revolución</div>
+<button onclick="playEpisode('revolucion.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada6.jpg">
+<div class="info">
+<div class="titulo">6. Thanksgiving Special</div>
+<button onclick="playEpisode('thanksgiving_special.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada7.jpg">
+<div class="info">
+<div class="titulo">7. Tradiciones de Invierno</div>
+<button onclick="playEpisode('tradiciones_invierno.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada8.jpg">
+<div class="info">
+<div class="titulo">8. Christmas Traditions</div>
+<button onclick="playEpisode('christmas_traditions.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada9.jpg">
+<div class="info">
+<div class="titulo">9. Voces de Diciembre</div>
+<button onclick="playEpisode('voces_de_diciembre.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada10.jpg">
+<div class="info">
+<div class="titulo">10. Back to School Tips</div>
+<button onclick="playEpisode('back_to_school_tips.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada11.jpg">
+<div class="info">
+<div class="titulo">11. Nuestros Propósitos</div>
+<button onclick="playEpisode('nuestros_propositos.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada12.jpg">
+<div class="info">
+<div class="titulo">12. Tiempo de Amistad</div>
+<button onclick="playEpisode('tiempo_de_amistad.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada13.jpg">
+<div class="info">
+<div class="titulo">13. Friendship Around the World</div>
+<button onclick="playEpisode('friendship_around_the_world.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada14.jpg">
+<div class="info">
+<div class="titulo">14. Cómo me siento</div>
+<button onclick="playEpisode('como_me_siento.mp3')">Escuchar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="portada15.jpg">
+<div class="info">
+<div class="titulo">15. Entendiendo mis emociones</div>
+<button onclick="playEpisode('entendiendo_mis_emociones.mp3')">Escuchar</button>
+</div>
+</div>
+
+</div>
+
+<div class="player">
+
+<audio id="audioPlayer" controls></audio>
+
+</div>
+
+<script>
+
+function playEpisode(file){
+
+var player=document.getElementById("audioPlayer");
+
+player.src=file;
+
+player.play();
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
