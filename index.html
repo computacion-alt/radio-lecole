@@ -328,7 +328,7 @@ grid-template-columns:1fr;
 <button onclick="playEpisode('la_felicidad_en_la_escuela.mp3')">Escuchar</button>
 </div>
 </div>
-  
+
 </div>
 
 <div class="player">
@@ -341,8 +341,9 @@ function playEpisode(file){
 
 var player=document.getElementById("audioPlayer");
 
+player.pause();
 player.src=file;
-
+player.load();
 player.play();
 
 window.scrollTo({
