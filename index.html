@@ -106,8 +106,24 @@ audio{width:95%;max-width:650px;}
 <div class="card"><img src="portada14.jpg"><div class="info"><div class="titulo">14. Cómo me siento</div><button onclick="playEpisode('como_me_siento.mp3')">Escuchar</button></div></div>
 <div class="card"><img src="portada15.jpg"><div class="info"><div class="titulo">15. Entendiendo mis emociones</div><button onclick="playEpisode('entendiendo_mis_emociones.mp3')">Escuchar</button></div></div>
 <div class="card"><img src="portada16.jpg"><div class="info"><div class="titulo">16. La Felicidad en la Escuela</div><button onclick="playEpisode('la_felicidad_en_la_escuela.mp3')">Escuchar</button></div></div>
-<div class="card"><img src="portada17.jpg"><div class="info"><div class="titulo">17. El Inglés abre puertas</div><button onclick="playEpisode('el_ingles_abre_puertas.mp3')">Escuchar</button></div></div>
-<div class="card"><img src="portada18.jpg"><div class="info"><div class="titulo">18. Ser niño hoy</div><button onclick="playEpisode('ser_nino_hoy.mp3')">Escuchar</button></div></div>
+
+<!-- 🔥 EPISODIO 17 (INGLÉS) -->
+<div class="card">
+<img src="portada17.jpg">
+<div class="info">
+<div class="titulo">17. El Inglés abre puertas</div>
+<button onclick="playEpisode('episodio17.mp3')">Escuchar</button>
+</div>
+</div>
+
+<!-- 🔥 EPISODIO 18 -->
+<div class="card">
+<img src="portada18.jpg">
+<div class="info">
+<div class="titulo">18. Ser niño hoy</div>
+<button onclick="playEpisode('episodio18.mp3')">Escuchar</button>
+</div>
+</div>
 
 </div>
 
@@ -119,13 +135,9 @@ audio{width:95%;max-width:650px;}
 function playEpisode(file){
 var player=document.getElementById("audioPlayer");
 player.pause();
-
-// 🔥 evitar caché
 player.src=file+"?v="+Date.now();
-
 player.load();
 player.play();
-
 window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
 }
 
