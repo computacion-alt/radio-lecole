@@ -107,8 +107,6 @@ height:160px;
 object-fit:cover;
 }
 
-/* INFO */
-
 .info{
 padding:15px;
 }
@@ -118,8 +116,6 @@ font-weight:bold;
 margin-bottom:10px;
 font-size:15px;
 }
-
-/* BOTON */
 
 button{
 background:#1db954;
@@ -153,18 +149,9 @@ width:95%;
 max-width:650px;
 }
 
-/* RESPONSIVE */
-
 @media (max-width:600px){
-
-.logo{
-width:90px;
-}
-
-.container{
-grid-template-columns:1fr;
-}
-
+.logo{width:90px;}
+.container{grid-template-columns:1fr;}
 }
 
 </style>
@@ -173,159 +160,48 @@ grid-template-columns:1fr;
 
 <body>
 
-<!-- PANTALLA INICIAL -->
-
 <div id="inicio">
-
 <img src="logo.png" class="logo-inicio">
-
 <h1>Radio L'ecole</h1>
-
 <p>Podcast oficial del colegio</p>
-
 <button onclick="entrar()">Entrar a la radio</button>
-
 </div>
 
 <header>
-
 <img src="logo.png" class="logo">
-
 <h1>Radio L'ecole</h1>
-
 <p>Podcast del colegio</p>
-
 <button id="instalarApp">Instalar app 📱</button>
-
 </header>
 
 <div class="container">
 
-<div class="card">
-<img src="portada1.jpg">
-<div class="info">
-<div class="titulo">1. Trick or Treat</div>
-<button onclick="playEpisode('trick_or_treat.mp3')">Escuchar</button>
-</div>
-</div>
+<!-- EPISODIOS -->
+
+<div class="card"><img src="portada1.jpg"><div class="info"><div class="titulo">1. Trick or Treat</div><button onclick="playEpisode('trick_or_treat.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada2.jpg"><div class="info"><div class="titulo">2. Día de Muertos</div><button onclick="playEpisode('dia_de_muertos.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada3.jpg"><div class="info"><div class="titulo">3. Voces de los Semifinalistas</div><button onclick="playEpisode('voces_semifinalistas.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada4.jpg"><div class="info"><div class="titulo">4. Detrás del Torneo</div><button onclick="playEpisode('detras_del_torneo.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada5.jpg"><div class="info"><div class="titulo">5. Revolución</div><button onclick="playEpisode('revolucion.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada6.jpg"><div class="info"><div class="titulo">6. Thanksgiving Special</div><button onclick="playEpisode('thanksgiving_special.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada7.jpg"><div class="info"><div class="titulo">7. Tradiciones de Invierno</div><button onclick="playEpisode('tradiciones_invierno.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada8.jpg"><div class="info"><div class="titulo">8. Christmas Traditions</div><button onclick="playEpisode('christmas_traditions.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada9.jpg"><div class="info"><div class="titulo">9. Voces de Diciembre</div><button onclick="playEpisode('voces_de_diciembre.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada10.jpg"><div class="info"><div class="titulo">10. Back to School Tips</div><button onclick="playEpisode('back_to_school_tips.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada11.jpg"><div class="info"><div class="titulo">11. Nuestros Propósitos</div><button onclick="playEpisode('nuestros_propositos.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada12.jpg"><div class="info"><div class="titulo">12. Tiempo de Amistad</div><button onclick="playEpisode('tiempo_de_amistad.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada13.jpg"><div class="info"><div class="titulo">13. Friendship Around the World</div><button onclick="playEpisode('friendship_around_the_world.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada14.jpg"><div class="info"><div class="titulo">14. Cómo me siento</div><button onclick="playEpisode('como_me_siento.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada15.jpg"><div class="info"><div class="titulo">15. Entendiendo mis emociones</div><button onclick="playEpisode('entendiendo_mis_emociones.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada16.jpg"><div class="info"><div class="titulo">16. La Felicidad en la Escuela</div><button onclick="playEpisode('la_felicidad_en_la_escuela.mp3')">Escuchar</button></div></div>
+
+<!-- NUEVO EPISODIO 17 -->
 
 <div class="card">
-<img src="portada2.jpg">
+<img src="portada17.jpg">
 <div class="info">
-<div class="titulo">2. Día de Muertos</div>
-<button onclick="playEpisode('dia_de_muertos.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada3.jpg">
-<div class="info">
-<div class="titulo">3. Voces de los Semifinalistas</div>
-<button onclick="playEpisode('voces_semifinalistas.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada4.jpg">
-<div class="info">
-<div class="titulo">4. Detrás del Torneo</div>
-<button onclick="playEpisode('detras_del_torneo.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada5.jpg">
-<div class="info">
-<div class="titulo">5. Revolución</div>
-<button onclick="playEpisode('revolucion.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada6.jpg">
-<div class="info">
-<div class="titulo">6. Thanksgiving Special</div>
-<button onclick="playEpisode('thanksgiving_special.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada7.jpg">
-<div class="info">
-<div class="titulo">7. Tradiciones de Invierno</div>
-<button onclick="playEpisode('tradiciones_invierno.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada8.jpg">
-<div class="info">
-<div class="titulo">8. Christmas Traditions</div>
-<button onclick="playEpisode('christmas_traditions.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada9.jpg">
-<div class="info">
-<div class="titulo">9. Voces de Diciembre</div>
-<button onclick="playEpisode('voces_de_diciembre.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada10.jpg">
-<div class="info">
-<div class="titulo">10. Back to School Tips</div>
-<button onclick="playEpisode('back_to_school_tips.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada11.jpg">
-<div class="info">
-<div class="titulo">11. Nuestros Propósitos</div>
-<button onclick="playEpisode('nuestros_propositos.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada12.jpg">
-<div class="info">
-<div class="titulo">12. Tiempo de Amistad</div>
-<button onclick="playEpisode('tiempo_de_amistad.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada13.jpg">
-<div class="info">
-<div class="titulo">13. Friendship Around the World</div>
-<button onclick="playEpisode('friendship_around_the_world.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada14.jpg">
-<div class="info">
-<div class="titulo">14. Cómo me siento</div>
-<button onclick="playEpisode('como_me_siento.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada15.jpg">
-<div class="info">
-<div class="titulo">15. Entendiendo mis emociones</div>
-<button onclick="playEpisode('entendiendo_mis_emociones.mp3')">Escuchar</button>
-</div>
-</div>
-
-<div class="card">
-<img src="portada16.jpg">
-<div class="info">
-<div class="titulo">16. La Felicidad en la Escuela</div>
-<button onclick="playEpisode('la_felicidad_en_la_escuela.mp3')">Escuchar</button>
+<div class="titulo">17. El Inglés abre puertas</div>
+<button onclick="playEpisode('el_ingles_abre_puertas.mp3')">Escuchar</button>
 </div>
 </div>
 
@@ -338,51 +214,32 @@ grid-template-columns:1fr;
 <script>
 
 function playEpisode(file){
-
 var player=document.getElementById("audioPlayer");
-
 player.pause();
 player.src=file;
 player.load();
 player.play();
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
+window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
 }
 
 function entrar(){
 document.getElementById("inicio").style.display="none";
 }
 
-/* INSTALAR APP */
-
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-
+window.addEventListener('beforeinstallprompt', (e)=>{
 e.preventDefault();
-
-deferredPrompt = e;
-
-document.getElementById("instalarApp").style.display = "inline-block";
-
+deferredPrompt=e;
+document.getElementById("instalarApp").style.display="inline-block";
 });
 
-document.getElementById("instalarApp").addEventListener("click", async () => {
-
-if (deferredPrompt) {
-
+document.getElementById("instalarApp").addEventListener("click", async ()=>{
+if(deferredPrompt){
 deferredPrompt.prompt();
-
-const { outcome } = await deferredPrompt.userChoice;
-
-deferredPrompt = null;
-
+await deferredPrompt.userChoice;
+deferredPrompt=null;
 }
-
 });
 
 </script>
