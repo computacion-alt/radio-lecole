@@ -2,160 +2,72 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Radio L'ecole</title>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0f2f57;
-color:white;
-}
-
-/* PANTALLA INICIAL */
+body{margin:0;font-family:Arial, Helvetica, sans-serif;background:#0f2f57;color:white;}
 
 #inicio{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#0f2f57;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-z-index:1000;
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:#0f2f57;display:flex;flex-direction:column;
+align-items:center;justify-content:center;text-align:center;z-index:1000;
 }
 
-.logo-inicio{
-width:170px;
-margin-bottom:20px;
-}
+.logo-inicio{width:170px;margin-bottom:20px;}
 
 #inicio button{
-background:#1db954;
-color:white;
-border:none;
-padding:12px 25px;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
+background:#1db954;color:white;border:none;
+padding:12px 25px;border-radius:25px;font-size:16px;
+cursor:pointer;margin-top:20px;
 }
 
-/* HEADER */
-
-header{
-text-align:center;
-padding:30px 20px;
-}
-
-.logo{
-width:120px;
-}
+header{text-align:center;padding:30px 20px;}
+.logo{width:120px;}
 
 #instalarApp{
-display:none;
-margin-top:10px;
-background:#1db954;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-cursor:pointer;
+display:none;margin-top:10px;background:#1db954;color:white;
+border:none;padding:10px 20px;border-radius:20px;cursor:pointer;
 font-weight:bold;
 }
-
-/* GRID EPISODIOS */
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-padding-bottom:150px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
+max-width:1100px;margin:auto;padding:20px;padding-bottom:150px;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;
 }
-
-/* TARJETAS */
 
 .card{
-background:white;
-color:#333;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
-transition:0.25s;
+background:white;color:#333;border-radius:12px;overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:0.25s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:160px;object-fit:cover;}
 
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.info{
-padding:15px;
-}
-
-.titulo{
-font-weight:bold;
-margin-bottom:10px;
-font-size:15px;
-}
+.info{padding:15px;}
+.titulo{font-weight:bold;margin-bottom:10px;font-size:15px;}
 
 button{
-background:#1db954;
-color:white;
-border:none;
-padding:8px 16px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
+background:#1db954;color:white;border:none;
+padding:8px 16px;border-radius:20px;cursor:pointer;font-weight:bold;
 }
 
-button:hover{
-background:#17a64a;
-}
-
-/* REPRODUCTOR */
+button:hover{background:#17a64a;}
 
 .player{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#081f3c;
-padding:12px;
-text-align:center;
-box-shadow:0 -3px 15px rgba(0,0,0,0.4);
+position:fixed;bottom:0;left:0;right:0;background:#081f3c;
+padding:12px;text-align:center;box-shadow:0 -3px 15px rgba(0,0,0,0.4);
 }
 
-audio{
-width:95%;
-max-width:650px;
-}
+audio{width:95%;max-width:650px;}
 
 @media (max-width:600px){
 .logo{width:90px;}
 .container{grid-template-columns:1fr;}
 }
-
 </style>
-
 </head>
 
 <body>
@@ -194,14 +106,15 @@ max-width:650px;
 <div class="card"><img src="portada14.jpg"><div class="info"><div class="titulo">14. Cómo me siento</div><button onclick="playEpisode('como_me_siento.mp3')">Escuchar</button></div></div>
 <div class="card"><img src="portada15.jpg"><div class="info"><div class="titulo">15. Entendiendo mis emociones</div><button onclick="playEpisode('entendiendo_mis_emociones.mp3')">Escuchar</button></div></div>
 <div class="card"><img src="portada16.jpg"><div class="info"><div class="titulo">16. La Felicidad en la Escuela</div><button onclick="playEpisode('la_felicidad_en_la_escuela.mp3')">Escuchar</button></div></div>
+<div class="card"><img src="portada17.jpg"><div class="info"><div class="titulo">17. El Inglés abre puertas</div><button onclick="playEpisode('el_ingles_abre_puertas.mp3')">Escuchar</button></div></div>
 
-<!-- NUEVO EPISODIO 17 -->
+<!-- NUEVO EPISODIO 18 -->
 
 <div class="card">
-<img src="portada17.jpg">
+<img src="portada18.jpg">
 <div class="info">
-<div class="titulo">17. El Inglés abre puertas</div>
-<button onclick="playEpisode('el_ingles_abre_puertas.mp3')">Escuchar</button>
+<div class="titulo">18. Ser niño hoy</div>
+<button onclick="playEpisode('ser_nino_hoy.mp3')">Escuchar</button>
 </div>
 </div>
 
@@ -212,7 +125,6 @@ max-width:650px;
 </div>
 
 <script>
-
 function playEpisode(file){
 var player=document.getElementById("audioPlayer");
 player.pause();
@@ -241,12 +153,10 @@ await deferredPrompt.userChoice;
 deferredPrompt=null;
 }
 });
-
 </script>
 
 </body>
 </html>
-
 
 
 
