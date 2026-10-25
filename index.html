@@ -9,9 +9,7 @@
 <title>Radio L'ecole</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -23,8 +21,6 @@ body {
 #inicio {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   background: #0f2f57;
   display: flex;
   flex-direction: column;
@@ -41,17 +37,6 @@ body {
   margin-bottom: 20px;
 }
 
-#inicio button {
-  background: #1db954;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
 header {
   text-align: center;
   padding: 30px 20px 20px;
@@ -62,56 +47,60 @@ header {
   max-width: 70%;
 }
 
-header h1 {
-  margin: 15px 0 10px;
-}
-
-header p {
-  margin: 8px 0;
-}
+header h1 { margin: 15px 0 10px; }
+header p { margin: 8px 0; }
 
 .temporada {
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-#instalarApp {
-  display: none;
-  margin-top: 10px;
+button {
   background: #1db954;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 9px 17px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
+}
+
+button:hover { background: #17a64a; }
+
+#inicio button {
+  padding: 12px 25px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#instalarApp {
+  display: none;
+  margin-top: 10px;
 }
 
 .container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px 20px 130px;
+  padding: 20px 20px 140px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 240px));
+  justify-content: center;
   align-items: start;
+  gap: 25px;
 }
 
 .card {
   width: 100%;
-  min-width: 0;
   background: white;
   color: #333;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   transition: transform 0.25s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+.card:hover { transform: translateY(-5px); }
 
 .card img {
   display: block;
@@ -122,29 +111,13 @@ header p {
   background: #0f2f57;
 }
 
-.info {
-  padding: 15px;
-}
+.info { padding: 15px; }
 
 .titulo {
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 15px;
   line-height: 1.4;
-}
-
-button {
-  background: #1db954;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #17a64a;
 }
 
 .player {
@@ -155,7 +128,7 @@ button:hover {
   background: #081f3c;
   padding: 12px;
   text-align: center;
-  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -3px 15px rgba(0,0,0,0.4);
   z-index: 100;
 }
 
@@ -167,18 +140,14 @@ audio {
 }
 
 @media (max-width: 600px) {
-  .logo {
-    width: 90px;
-  }
+  .logo { width: 90px; }
 
   .container {
-    grid-template-columns: 1fr;
-    padding: 15px 15px 130px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 15px 20px 130px;
   }
 
-  header {
-    padding-top: 25px;
-  }
+  header { padding-top: 25px; }
 }
 </style>
 </head>
@@ -201,15 +170,17 @@ audio {
 </header>
 
 <div class="container">
-
   <div class="card">
-    <img src="portada1.jpg" alt="Especial de Halloween">
+    <img
+      src="portada1.jpg"
+      alt="Especial de Halloween"
+      onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin','<div style=&quot;height:150px;display:flex;align-items:center;justify-content:center;background:#e8edf3;color:#333;padding:12px;text-align:center&quot;>No se pudo cargar portada1.jpg</div>');"
+    >
     <div class="info">
       <div class="titulo">Temporada 1 · Episodio 1: Especial de Halloween</div>
       <button onclick="playEpisode('episodio1.mp3')">Escuchar</button>
     </div>
   </div>
-
 </div>
 
 <div class="player">
@@ -217,26 +188,20 @@ audio {
 </div>
 
 <script>
-function playEpisode(file) {
-  var player = document.getElementById("audioPlayer");
+function entrar() {
+  document.getElementById("inicio").style.display = "none";
+}
 
+function playEpisode(file) {
+  const player = document.getElementById("audioPlayer");
   player.pause();
   player.src = file + "?v=" + Date.now();
   player.load();
 
   player.play().catch(function(error) {
-    console.error("Error al reproducir el audio:", error);
-    alert("No se pudo reproducir el episodio. Comprueba que el archivo MP3 esté publicado y que su nombre coincida exactamente.");
+    console.error("Error al reproducir el episodio:", error);
+    alert("No se pudo reproducir el audio. Comprueba que episodio1.mp3 esté publicado en GitHub.");
   });
-
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
-  });
-}
-
-function entrar() {
-  document.getElementById("inicio").style.display = "none";
 }
 
 let deferredPrompt;
@@ -260,5 +225,4 @@ document.getElementById("instalarApp").addEventListener("click", async function(
 </body>
 </html>
 ```
-
 
