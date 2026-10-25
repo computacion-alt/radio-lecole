@@ -7,142 +7,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0f2f57">
 <link rel="manifest" href="manifest.json">
-<title>Radio L'ecole | Nueva Temporada</title>
+<title>Radio L'ecole</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0f2f57;
-color:white;
+* {
+box-sizing: border-box;
 }
 
-#inicio{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#0f2f57;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-z-index:1000;
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: #0f2f57;
+color: white;
 }
 
-.logo-inicio{
-width:170px;
-max-width:70%;
-margin-bottom:20px;
+#inicio {
+position: fixed;
+inset: 0;
+width: 100%;
+height: 100%;
+background: #0f2f57;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+z-index: 1000;
+padding: 20px;
 }
 
-#inicio button{
-background:#1db954;
-color:white;
-border:none;
-padding:12px 25px;
-border-radius:25px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
+.logo-inicio {
+width: 170px;
+max-width: 70%;
+margin-bottom: 20px;
 }
 
-header{
-text-align:center;
-padding:30px 20px;
+#inicio button {
+background: #1db954;
+color: white;
+border: none;
+padding: 12px 25px;
+border-radius: 25px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px;
 }
 
-.logo{
-width:120px;
-max-width:70%;
+header {
+text-align: center;
+padding: 30px 20px 20px;
 }
 
-#instalarApp{
-display:none;
-margin-top:10px;
-background:#1db954;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
+.logo {
+width: 120px;
+max-width: 70%;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-padding-bottom:150px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
+header h1 {
+margin: 15px 0 10px;
 }
 
-.card{
-background:white;
-color:#333;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
-transition:0.25s;
+header p {
+margin: 8px 0;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.temporada {
+font-weight: bold;
+letter-spacing: 1px;
 }
 
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
+#instalarApp {
+display: none;
+margin-top: 12px;
+background: #1db954;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 20px;
+cursor: pointer;
+font-weight: bold;
 }
 
-.info{
-padding:15px;
+.container {
+max-width: 1100px;
+margin: auto;
+padding: 20px 20px 140px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 25px;
 }
 
-.titulo{
-font-weight:bold;
-margin-bottom:10px;
-font-size:15px;
+.card {
+background: white;
+color: #333;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+transition: transform 0.25s;
 }
 
-button{
-background:#1db954;
-color:white;
-border:none;
-padding:8px 16px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
+.card:hover {
+transform: translateY(-5px);
 }
 
-button:hover{
-background:#17a64a;
+.card img {
+display: block;
+width: 100%;
+height: auto;
+aspect-ratio: 4 / 3;
+object-fit: contain;
+background: #0f2f57;
 }
 
-.player{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#081f3c;
-padding:12px;
-text-align:center;
-box-shadow:0 -3px 15px rgba(0,0,0,0.4);
+.info {
+padding: 15px;
 }
 
-audio{
-width:95%;
-max-width:650px;
+.titulo {
+font-weight: bold;
+margin-bottom: 10px;
+font-size: 15px;
+line-height: 1.4;
 }
 
-@media (max-width:600px){
-.logo{width:90px;}
-.container{grid-template-columns:1fr;}
+button {
+background: #1db954;
+color: white;
+border: none;
+padding: 8px 16px;
+border-radius: 20px;
+cursor: pointer;
+font-weight: bold;
+}
+
+button:hover {
+background: #17a64a;
+}
+
+.player {
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: #081f3c;
+padding: 12px;
+text-align: center;
+box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.4);
+z-index: 100;
+}
+
+audio {
+width: 95%;
+max-width: 650px;
+}
+
+@media (max-width: 600px) {
+.logo {
+width: 90px;
+}
+
+.container {
+grid-template-columns: 1fr;
+padding: 15px 15px 130px;
+}
+
+.card img {
+aspect-ratio: 4 / 3;
+}
+
+header {
+padding-top: 25px;
+}
 }
 </style>
 </head>
@@ -152,14 +187,14 @@ max-width:650px;
 <div id="inicio">
 <img src="logo.png" class="logo-inicio" alt="Radio L'ecole">
 <h1>Radio L'ecole</h1>
-<p>Nueva temporada · Nuevas voces, nuevas historias</p>
+<p>Nueva temporada, nuevas voces e historias.</p>
 <button onclick="entrar()">Entrar a la radio</button>
 </div>
 
 <header>
 <img src="logo.png" class="logo" alt="Radio L'ecole">
 <h1>Radio L'ecole</h1>
-<p><strong>NUEVA TEMPORADA</strong></p>
+<p class="temporada">NUEVA TEMPORADA</p>
 <p>Nuevos locutores, nuevas historias y nuevas voces.</p>
 <button id="instalarApp">Instalar app 📱</button>
 </header>
@@ -167,9 +202,9 @@ max-width:650px;
 <div class="container">
 
 <div class="card">
-<img src="portada1.jpg" alt="Portada del episodio 1">
+<img src="portada1.png" alt="Especial de Halloween - Episodio 1">
 <div class="info">
-<div class="titulo">Temporada 1 · Episodio 1</div>
+<div class="titulo">Temporada 1 · Episodio 1: Especial de Halloween</div>
 <button onclick="playEpisode('episodio1.mp3')">Escuchar</button>
 </div>
 </div>
@@ -181,42 +216,42 @@ max-width:650px;
 </div>
 
 <script>
-function playEpisode(file){
-var player=document.getElementById("audioPlayer");
+function playEpisode(file) {
+var player = document.getElementById("audioPlayer");
 
 player.pause();
-player.src=file+"?v="+Date.now();
+player.src = file + "?v=" + Date.now();
 player.load();
 
-player.play().catch(function(error){
-console.log("No se pudo reproducir el episodio:",error);
-alert("No se pudo reproducir el audio. Revisa que el archivo exista y que su nombre coincida exactamente.");
+player.play().catch(function(error) {
+console.error("Error al reproducir el audio:", error);
+alert("No se pudo reproducir el episodio. Revisa que el archivo MP3 esté subido y que su nombre coincida exactamente.");
 });
 
 window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
+top: document.body.scrollHeight,
+behavior: "smooth"
 });
 }
 
-function entrar(){
-document.getElementById("inicio").style.display="none";
+function entrar() {
+document.getElementById("inicio").style.display = "none";
 }
 
 let deferredPrompt;
 
-window.addEventListener("beforeinstallprompt",function(e){
+window.addEventListener("beforeinstallprompt", function(e) {
 e.preventDefault();
-deferredPrompt=e;
-document.getElementById("instalarApp").style.display="inline-block";
+deferredPrompt = e;
+document.getElementById("instalarApp").style.display = "inline-block";
 });
 
-document.getElementById("instalarApp").addEventListener("click",async function(){
-if(deferredPrompt){
+document.getElementById("instalarApp").addEventListener("click", async function() {
+if (deferredPrompt) {
 deferredPrompt.prompt();
 await deferredPrompt.userChoice;
-deferredPrompt=null;
-document.getElementById("instalarApp").style.display="none";
+deferredPrompt = null;
+document.getElementById("instalarApp").style.display = "none";
 }
 });
 </script>
@@ -224,6 +259,5 @@ document.getElementById("instalarApp").style.display="none";
 </body>
 </html>
 ```
-
 
 
