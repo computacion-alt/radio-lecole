@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,8 +23,7 @@ color: white;
 
 #inicio {
 position: fixed;
-top: 0;
-left: 0;
+inset: 0;
 width: 100%;
 height: 100%;
 background: #0f2f57;
@@ -94,7 +93,7 @@ max-width: 1100px;
 margin: auto;
 padding: 20px 20px 140px;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 gap: 25px;
 align-items: start;
 }
@@ -225,7 +224,7 @@ player.load();
 
 player.play().catch(function(error) {
 console.error("Error al reproducir:", error);
-alert("No se pudo reproducir el episodio. Comprueba que el archivo MP3 esté subido y que su nombre coincida exactamente.");
+alert("No se pudo reproducir el episodio. Revisa que el archivo MP3 exista y que su nombre coincida exactamente.");
 });
 
 window.scrollTo({
