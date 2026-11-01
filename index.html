@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -191,15 +190,29 @@ audio {
 
 <div class="container">
 
+  <!-- TEMPORADA 1 - EPISODIO 1 -->
   <div class="card">
-    <img
-      src="./portada1.jpg?v=2"
-      alt="Especial de Halloween"
-      onerror="this.alt='No se pudo cargar la portada'; this.style.visibility='hidden';"
-    >
+    <img src="./portada1.jpg?v=2" alt="Especial de Halloween">
     <div class="info">
-      <div class="titulo">Temporada 1 · Episodio 1: Especial de Halloween</div>
-      <button onclick="playEpisode('episodio1.mp3')">Escuchar</button>
+      <div class="titulo">
+        Temporada 1 · Episodio 1: Especial de Halloween
+      </div>
+      <button onclick="playEpisode('episodio1.mp3')">
+        Escuchar
+      </button>
+    </div>
+  </div>
+
+  <!-- TEMPORADA 1 - EPISODIO 2 -->
+  <div class="card">
+    <img src="./portada2.png?v=1" alt="Portada del episodio 2">
+    <div class="info">
+      <div class="titulo">
+        Temporada 1 · Episodio 2
+      </div>
+      <button onclick="playEpisode('episodio2.mp3')">
+        Escuchar
+      </button>
     </div>
   </div>
 
@@ -223,7 +236,12 @@ function playEpisode(file) {
 
   player.play().catch(function(error) {
     console.error("Error al reproducir el audio:", error);
-    alert("No se pudo reproducir el episodio. Comprueba que episodio1.mp3 esté publicado en GitHub.");
+    alert("No se pudo reproducir el episodio. Comprueba que el archivo MP3 esté publicado en GitHub y que su nombre coincida exactamente.");
+  });
+
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
   });
 }
 
@@ -248,4 +266,3 @@ document.getElementById("instalarApp").addEventListener("click", async function(
 </body>
 </html>
 ```
-
