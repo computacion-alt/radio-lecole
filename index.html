@@ -1,13 +1,11 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0f2f57">
 <link rel="manifest" href="manifest.json">
-
 <title>Radio L'ecole</title>
 
 <style>
@@ -107,14 +105,17 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, 240px);
   justify-content: center;
-  align-items: start;
+  align-items: stretch;
   gap: 25px;
 }
 
-/* TARJETAS */
+/* TODAS LAS TARJETAS DEL MISMO TAMAÑO */
 
 .card {
   width: 240px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
   background: white;
   color: #333;
   border-radius: 12px;
@@ -127,27 +128,44 @@ button:hover {
   transform: translateY(-5px);
 }
 
+/* PORTADAS UNIFORMES */
+
 .card img {
   display: block;
   width: 100%;
   height: 150px;
+  min-height: 150px;
   object-fit: cover;
   object-position: center;
-  background: #0f2f57;
+  flex-shrink: 0;
+  background: #e8edf3;
 }
 
+/* INFORMACIÓN Y BOTONES ALINEADOS */
+
 .info {
-  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 15px;
 }
 
 .titulo {
+  height: 60px;
+  overflow: hidden;
   font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
+  margin-bottom: 5px;
 }
 
-/* REPRODUCTOR */
+.info button {
+  align-self: flex-start;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* REPRODUCTOR FIJO */
 
 .player {
   position: fixed;
@@ -168,21 +186,21 @@ audio {
   margin: 0 auto;
 }
 
-/* CELULARES */
+/* ADAPTACIÓN PARA CELULARES */
 
 @media (max-width: 600px) {
-
   .logo {
     width: 90px;
   }
 
   .container {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 15px 20px 130px;
+    grid-template-columns: 240px;
+    justify-content: center;
+    padding: 15px 15px 130px;
   }
 
   .card {
-    width: 100%;
+    width: 240px;
   }
 
   header {
@@ -194,34 +212,23 @@ audio {
 
 <body>
 
-<!-- BIENVENIDA -->
+<!-- PANTALLA DE BIENVENIDA -->
 
 <div id="inicio">
-
   <img src="./logo.png" class="logo-inicio" alt="Radio L'ecole">
-
   <h1>Radio L'ecole</h1>
-
   <p>Nueva temporada, nuevas voces e historias.</p>
-
   <button onclick="entrar()">Entrar a la radio</button>
-
 </div>
 
 <!-- ENCABEZADO -->
 
 <header>
-
   <img src="./logo.png" class="logo" alt="Radio L'ecole">
-
   <h1>Radio L'ecole</h1>
-
   <p class="temporada">NUEVA TEMPORADA</p>
-
   <p>Nuevos locutores, nuevas historias y nuevas voces.</p>
-
   <button id="instalarApp">Instalar app 📱</button>
-
 </header>
 
 <!-- EPISODIOS -->
@@ -231,51 +238,37 @@ audio {
   <!-- TEMPORADA 1 - EPISODIO 1 -->
 
   <div class="card">
-
     <img src="./portada1.jpg?v=2" alt="Especial de Halloween">
-
     <div class="info">
-
       <div class="titulo">
         Temporada 1 · Episodio 1: Especial de Halloween
       </div>
-
       <button onclick="playEpisode('episodio1.mp3')">
         Escuchar
       </button>
-
     </div>
-
   </div>
 
   <!-- TEMPORADA 1 - EPISODIO 2 -->
 
   <div class="card">
-
-    <img src="./portada2.png?v=1" alt="Portada del episodio 2">
-
+    <img src="./portada2.png?v=1" alt="Especial de Día de Muertos">
     <div class="info">
-
       <div class="titulo">
-        Temporada 1 · Episodio 2
+        Temporada 1 · Episodio 2: Especial de Día de Muertos
       </div>
-
       <button onclick="playEpisode('episodio2.mp3')">
         Escuchar
       </button>
-
     </div>
-
   </div>
 
 </div>
 
-<!-- REPRODUCTOR FIJO -->
+<!-- REPRODUCTOR -->
 
 <div class="player">
-
   <audio id="audioPlayer" controls preload="none"></audio>
-
 </div>
 
 <script>
@@ -283,41 +276,33 @@ audio {
 /* ENTRAR A LA RADIO */
 
 function entrar() {
-
   document.getElementById("inicio").style.display = "none";
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 /* REPRODUCIR EPISODIOS */
 
 function playEpisode(file) {
-
   const player = document.getElementById("audioPlayer");
 
   player.pause();
-
   player.src = "./" + file + "?v=" + Date.now();
-
   player.load();
 
   player.play().catch(function(error) {
-
     console.error("Error al reproducir:", error);
 
     alert("No se pudo reproducir el episodio. Comprueba que el archivo MP3 esté publicado en GitHub y que su nombre coincida exactamente.");
-
   });
 
   window.scrollTo({
     top: document.body.scrollHeight,
     behavior: "smooth"
   });
-
 }
 
 /* INSTALAR APLICACIÓN */
@@ -325,33 +310,24 @@ function playEpisode(file) {
 let deferredPrompt;
 
 window.addEventListener("beforeinstallprompt", function(e) {
-
   e.preventDefault();
-
   deferredPrompt = e;
 
   document.getElementById("instalarApp").style.display = "inline-block";
-
 });
 
 document.getElementById("instalarApp").addEventListener("click", async function() {
-
   if (deferredPrompt) {
-
     deferredPrompt.prompt();
-
     await deferredPrompt.userChoice;
 
     deferredPrompt = null;
 
     document.getElementById("instalarApp").style.display = "none";
-
   }
-
 });
 
 </script>
 
 </body>
 </html>
-```
