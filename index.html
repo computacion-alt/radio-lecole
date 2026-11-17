@@ -20,7 +20,7 @@ body {
   color: white;
 }
 
-/* PANTALLA DE BIENVENIDA */
+/* BIENVENIDA */
 
 #inicio {
   position: fixed;
@@ -95,7 +95,7 @@ button:hover {
   margin-top: 10px;
 }
 
-/* CUADRÍCULA DE EPISODIOS */
+/* CUADRÍCULA */
 
 .container {
   width: 100%;
@@ -109,7 +109,7 @@ button:hover {
   gap: 25px;
 }
 
-/* TODAS LAS TARJETAS DEL MISMO TAMAÑO */
+/* TARJETAS */
 
 .card {
   width: 240px;
@@ -128,7 +128,7 @@ button:hover {
   transform: translateY(-5px);
 }
 
-/* PORTADAS UNIFORMES */
+/* PORTADAS */
 
 .card img {
   display: block;
@@ -141,7 +141,7 @@ button:hover {
   background: #e8edf3;
 }
 
-/* INFORMACIÓN Y BOTONES ALINEADOS */
+/* INFORMACIÓN */
 
 .info {
   flex: 1;
@@ -165,7 +165,7 @@ button:hover {
   flex-shrink: 0;
 }
 
-/* REPRODUCTOR FIJO */
+/* REPRODUCTOR */
 
 .player {
   position: fixed;
@@ -186,7 +186,7 @@ audio {
   margin: 0 auto;
 }
 
-/* ADAPTACIÓN PARA CELULARES */
+/* CELULARES */
 
 @media (max-width: 600px) {
   .logo {
@@ -258,6 +258,20 @@ audio {
         Temporada 1 · Episodio 2: Especial de Día de Muertos
       </div>
       <button onclick="playEpisode('episodio2.mp3')">
+        Escuchar
+      </button>
+    </div>
+  </div>
+
+  <!-- TEMPORADA 1 - EPISODIO 3 -->
+
+  <div class="card">
+    <img src="./portada3.png?v=1" alt="Portada del episodio 3">
+    <div class="info">
+      <div class="titulo">
+        Temporada 1 · Episodio 3
+      </div>
+      <button onclick="playEpisode('episodio3.mp3')">
         Escuchar
       </button>
     </div>
